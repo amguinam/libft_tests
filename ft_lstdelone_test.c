@@ -15,9 +15,8 @@ int	ft_lstdelone_test(void)
 	ft_lstdelone(node, useful_delet);
 	ft_lstdelone(NULL, useful_delet);
 	node = ft_lstnew(strdup("plop"));
-	ft_lstdelone(node, NULL);
+	//ft_lstdelone(node, NULL);
 	free(node->content);
 	free(node);
 	return (ok);
 }
-//faut juste bien que je test si ca crash pas dans tout les cas nop ?

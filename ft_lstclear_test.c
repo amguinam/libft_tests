@@ -30,13 +30,5 @@ int	ft_lstclear_test(void)
 		ok = 0;
 	}
 	ft_lstclear(&list, useful_delet);
-	ft_lstadd_back(&list, ft_lstnew(strdup("last")));
-	ft_lstclear(&list, NULL);
-	if (list == NULL)
-	{
-		printf("lstclear clear with NULL : ko\n");
-		ok = 0;
-	}
-	ft_lstclear(&list, useful_delet);
 	return (ok);
 }

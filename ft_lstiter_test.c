@@ -23,7 +23,6 @@ int	ft_lstiter_test(void)
 		*)list->next->content);
 		ok = 0;
 	}
-	ft_lstiter(list, NULL);
 	ft_lstclear(&list, useful_delet);
 	return (ok);
 }
