@@ -15,7 +15,7 @@ int	ft_split_test(void)
 		printf("ft_split couplopouc with c, ko : NULL\n");
 		ok = 0;
 	}
-	check_tabs = useful_check_tabs(3, new_ft_split,"", "ouplopou", "");
+	check_tabs = useful_check_tabs(1, new_ft_split, "ouplopou");
 	if (check_tabs != -1)
 	{
 		write(1, "ft_split couploppouc with c, ko:", 32);
