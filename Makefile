@@ -58,7 +58,7 @@ test: test.out norme
 	./test.out
 
 norme:
-	#norminette ../*.[ch]
+	norminette ../*.[ch]
 
 %.o: %.c libtest.h
 	$(CC) $(CFLAGS) -c -I.. $< -o $@
