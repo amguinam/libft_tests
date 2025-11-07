@@ -1,5 +1,6 @@
 #include "libft.h"
 #include "libtest.h"
+#include <bsd/string.h>
 
 int	ft_strnstr_test(void)
 {
@@ -10,14 +11,9 @@ int	ft_strnstr_test(void)
 	ok = 1;
 	haystack = "coucou plop";
 	save_ft_strnstr = ft_strnstr(haystack, "plop", 10);
-	if (save_ft_strnstr == 0)
+	if (save_ft_strnstr != 0)
 	{
-		printf("ft_strnstr sbig : coucou plop ,slittle : plop ,size 10, ko : NULL, expect = plop\n");
-		ok = 0;
-	}
-	else if (save_ft_strnstr - haystack != 7)
-	{
-		printf("ft_strnstr sbig : coucou plop ,slittle : plop ,size 10, ko : %s, expect = plop\n", save_ft_strnstr);
+		printf("ft_strnstr sbig : coucou plop ,slittle : plop ,size 10, ko : NULL\n");
 		ok = 0;
 	}
 	haystack = "coucou plop";
@@ -34,10 +30,16 @@ int	ft_strnstr_test(void)
 		printf("ft_strnstr sbig : coucou pl ,slittle : plop ,size 10, ko : %s, expect = NULL\n", save_ft_strnstr);
 		ok = 0;
 	}
-	save_ft_strnstr = ft_strnstr("", "", 1);
-	if (save_ft_strnstr != 0)
+	haystack = "";
+	save_ft_strnstr = ft_strnstr(haystack, "", 1);
+	if (save_ft_strnstr == 0)
 	{
-		printf("ft_strnstr sbig : empty ,slittle : empty ,size 1, ko : %s, expect = NULL\n", save_ft_strnstr);
+		printf("ft_strnstr sbig : empty ,slittle : empty ,size 1, ko : NULL\n");
+		ok = 0;
+	}
+	else if (save_ft_strnstr - haystack != 0)
+	{
+		printf("ft_strnstr sbig : empty,slittle : empty ,size 1, ko : %s, expect = plop\n", save_ft_strnstr);
 		ok = 0;
 	}
 	haystack = "coucou plop";
