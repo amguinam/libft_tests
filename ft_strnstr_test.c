@@ -39,7 +39,19 @@ int	ft_strnstr_test(void)
 	}
 	else if (save_ft_strnstr - haystack != 0)
 	{
-		printf("ft_strnstr sbig : empty,slittle : empty ,size 1, ko : %s, expect = plop\n", save_ft_strnstr);
+		printf("ft_strnstr sbig : empty,slittle : empty ,size 1, ko : %s, expect = coucou\n", save_ft_strnstr);
+		ok = 0;
+	}
+	haystack = "coucou";
+	save_ft_strnstr = ft_strnstr(haystack, "", 1);
+	if (save_ft_strnstr == 0)
+	{
+		printf("ft_strnstr sbig : coucou ,slittle : empty ,size 1, ko : NULL\n");
+		ok = 0;
+	}
+	else if (save_ft_strnstr - haystack != 0)
+	{
+		printf("ft_strnstr sbig : coucou,slittle : empty ,size 1, ko : %s, expect = coucou\n", save_ft_strnstr);
 		ok = 0;
 	}
 	haystack = "coucou plop";

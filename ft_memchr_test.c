@@ -4,7 +4,7 @@
 int	ft_memchr_test(void)
 {
  	int		ok;
-	char	tab[] = "coucou\0aaa";
+	char	tab[] = "coucou\0aaa\xff";
 	char	*save_ft_memchr;
 
 	ok = 1;
@@ -73,6 +73,17 @@ int	ft_memchr_test(void)
 	else if (save_ft_memchr - tab != 7)
 	{
 		printf("ft_memchr research u size 8 , ko = %ld, expect : 7\n", (save_ft_memchr - tab));
+		ok = 0;
+	}
+	save_ft_memchr = ft_memchr(tab, -1, 11);
+	if (save_ft_memchr == 0)
+	{
+		printf("ft_memchr coucou with research -1 size 11, ko = NULL, expect : \\xff\n");
+		ok = 0;
+	}
+	else if (save_ft_memchr - tab != 10)
+	{
+		printf("ft_memchr research -1 size 11 , ko = %ld, expect : 10\n", (save_ft_memchr - tab));
 		ok = 0;
 	}
 	return (ok);

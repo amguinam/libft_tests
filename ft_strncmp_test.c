@@ -13,6 +13,12 @@ int	ft_strncmp_test(void)
 		printf("ft_strncmp s1 : coucou s2 : coucou size : 6, ko : %d, expect : 0\n" , save_strncmp);
 		ok = 0;
 	}
+	save_strncmp = ft_strncmp("coucou\x80", "coucou\x00", 7);
+	if (save_strncmp != 128)
+	{
+		printf("ft_strncmp s1 : coucou\\x80 s2 : coucou\\x00 size : 7, ko : %d, expect : 128\n" , save_strncmp);
+		ok = 0;
+	}
 	save_strncmp = ft_strncmp("", "coucou", 6);
 	if (save_strncmp > 0)
 	{

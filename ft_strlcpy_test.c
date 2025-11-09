@@ -8,6 +8,17 @@ int	ft_strlcpy_test(void)
 	char	tab[101] = "coucou";
 
 	ok = 1;
+	save_ft_strlcpy = ft_strlcpy(tab, "aaaa", 0);
+	if (save_ft_strlcpy != 4)
+	{
+		printf("ft_strlcpy aaaa with size 0, ko : %ld, expect = 4\n", save_ft_strlcpy);
+		ok = 0;
+	}
+	if (strcmp(tab, "coucou") != 0)
+	{
+		printf("ft_strlcpy coucou, ko : %s, expect coucou\n", tab);
+		ok = 0;
+	}
 	save_ft_strlcpy = ft_strlcpy(tab, "", 1);
 	if (tab[0] != 0)
 	{
