@@ -35,7 +35,8 @@ TEST = useful.c \
 	ft_putstr_fd_test.c \
 	ft_putendl_fd_test.c \
 	ft_putnbr_fd_test.c
-TESTBONUS = ft_lstnew_test.c \
+TESTBONUS = useful_bonus.c \
+	ft_lstnew_test.c \
 	ft_lstadd_front_test.c \
 	ft_lstsize_test.c \
 	ft_lstlast_test.c \

@@ -7,6 +7,18 @@ int	ft_substr_test(void)
 	char	*save_ft_substr;
 
 	ok = 1;
+	save_ft_substr = ft_substr("coucou" , 10, 10);
+	if (save_ft_substr == 0)
+	{
+		printf("ft_substr coucou research index 10 size 10, ko :NULL\n");
+		ok = 0;
+	}
+	else if (strcmp(save_ft_substr, "") != 0)
+	{
+		printf("ft_substr coucou research index 10 size 10, ko emplacement : %s\n", save_ft_substr);
+		ok = 0;
+	}
+	free(save_ft_substr);
 	save_ft_substr = ft_substr("coucou", 0, 6);
 	if (save_ft_substr == 0)
 	{
