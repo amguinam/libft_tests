@@ -60,5 +60,22 @@ int	ft_split_test(void)
 	while (new_ft_split[i])
 		free(new_ft_split[i++]);
 	free(new_ft_split);
+	new_ft_split = ft_split("coucou plop", '\0');
+	if (new_ft_split == 0)
+	{
+		printf("ft_split coucou plop with \\0, ko : NULL\n");
+		ok = 0;
+	}
+	check_tabs = useful_check_tabs(1, new_ft_split, "coucou plop");
+	if (check_tabs != -1)
+	{
+		write(1, "ft_split coucou plop with \\0, ko:", 33);
+		useful_write_tabs(new_ft_split);
+		ok = 0;
+	}
+	i = 0;
+	while (new_ft_split[i])
+		free(new_ft_split[i++]);
+	free(new_ft_split);
 	return (ok);
 }
